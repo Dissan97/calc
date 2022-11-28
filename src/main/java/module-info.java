@@ -8,5 +8,4 @@ module it.calc.calculator {
     opens com.example to javafx.fxml;
     exports com.example;
     exports com.example.arithmetics;
-    exports com.example.webapp;
 }
