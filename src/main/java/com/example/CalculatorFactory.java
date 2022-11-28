@@ -7,6 +7,8 @@ public class CalculatorFactory {
     private static int calculatorInstance = 0;
     private static Calculator calculation;
 
+    private CalculatorFactory(){}
+
     public static Calculator getCalculations() {
         if (CalculatorFactory.calculatorInstance != 1) {
             CalculatorFactory.calculation = new Calculator();

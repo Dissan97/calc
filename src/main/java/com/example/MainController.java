@@ -18,6 +18,12 @@ public class MainController {
 
     private final Operation calculator = CalculatorFactory.getCalculations();
 
+    /**
+     * Generating the controller for the application
+     * @param buttons passing the button needed for the application
+     * @param labelOne Label that shall show value inserted by user
+     * @param labelTwo Label use to provide result to the user
+     */
     public MainController(Button[] buttons, Label labelOne, Label labelTwo){
 
         this.labels[0] = labelOne;
@@ -32,6 +38,11 @@ public class MainController {
         }
 
     }
+
+    /**
+     * Operation that will use method doOperation implemented in calculator
+     * @return error code -1 or 0 it's all ok
+     */
 
     private int operation(){
         if(calculator.doOperation(valuesToOperate) == -1){
@@ -58,6 +69,10 @@ public class MainController {
     private void getLastResult() {
         this.getLabel(1).setText(String.valueOf(calculator.getLastResult()));
     }
+
+    /**
+     * This method will analyze the passed string to avoid errors
+     */
 
     private void operate() {
         this.results = 0;
@@ -122,6 +137,10 @@ public class MainController {
         this.clearValues();
     }
 
+    /**
+     * Parsing input from button handler
+     * @param in button input handled by buttons
+     */
     public void input(String in){
         switch (in){
             case "C" -> clear();
@@ -146,10 +165,5 @@ public class MainController {
             throw new RuntimeException(ex);
         }
     }
-
-
-
-
-
 }
 

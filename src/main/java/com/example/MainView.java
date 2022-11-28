@@ -8,7 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class MainView extends Application {
 
     private final Label resultText = new Label("");
     private final Label valueText = new Label("");
@@ -52,7 +52,10 @@ public class Main extends Application {
         for (int i = 0; i < 20; i++){
             //BUTTON SETUP
             buttons[i] = new Button(String.valueOf(BUTTON_VALUES[i]));
-            buttons[i].setStyle("-fx-color: rgba(231, 8, 146, 0.815); -fx-border: 2px; -fx-border-color: black; -fx-border-radius: 8px;");
+            if (buttons[i].getText().equals("="))
+                buttons[i].setStyle("-fx-color: red; -fx-border: 2px; -fx-border-color: black; -fx-border-radius: 8px;");
+            else
+                buttons[i].setStyle("-fx-color: blue; -fx-border: 2px; -fx-border-color: black; -fx-border-radius: 8px;");
             int BTN_WIDTH = 50;
             buttons[i].setMinWidth(BTN_WIDTH);
             int BTN_HEIGHT = 50;
